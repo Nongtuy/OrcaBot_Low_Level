@@ -18,7 +18,7 @@ Contact: Tongthai  Thongsupan. Thai_23@outlook.co.th*/
 // 包含與電位計一起使用的函式庫 SPI
 class MaxonAmplifierMarkIII {
 public:
-    MaxonAmplifierMarkIII(const int readyPin, const int enablePin, const int directionPin, const int potentiometerPin);
+    MaxonAmplifierMarkIII(int readyPin, int enablePin, int directionPin, int potentiometerPin);
 
     void begin();  // Initialize the library
 
@@ -38,10 +38,11 @@ private:
     void sendToDigitalPotentiometer(const byte value);
 
     // Member variables
-    const int _readyPin;
-    const int _enablePin;
-    const int _directionPin;
-    constint _potentiometerPin;
+    int _readyPin;
+    int _enablePin;
+    int _directionPin;
+    int _potentiometerPin;
 };
 
 #endif
+
