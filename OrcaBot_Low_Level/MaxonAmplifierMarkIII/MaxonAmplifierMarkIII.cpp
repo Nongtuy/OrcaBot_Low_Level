@@ -71,3 +71,4 @@ void MaxonAmplifierMarkIII::sendToDigitalPotentiometer(byte value) {
     SPI.transfer(value);       // Potentiometer value
     digitalWrite(_potentiometerPin, HIGH);  // Deselect MCP41010
 }
+
