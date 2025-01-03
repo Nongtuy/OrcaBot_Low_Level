@@ -32,7 +32,7 @@ void MaxonAmplifierMarkIII::begin() {
 }
 
 void MaxonAmplifierMarkIII::setSpeed(float speed) {
-    int speedValue = map(speed, -255, 255, 255, 255);
+    int speedValue = abs(speed);
     sendToDigitalPotentiometer(speedValue);  // Set speed via MCP41010
 
     // Set direction based on the sign of the speed
