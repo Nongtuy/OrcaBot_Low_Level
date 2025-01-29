@@ -21,7 +21,8 @@ void MaxonAmplifierMarkIII::begin() {
     SPI.begin();
     SPI.setBitOrder(MSBFIRST);
     SPI.setDataMode(SPI_MODE0);
-    SPI.setClockDivider(SPI_CLOCK_DIV8);
+    SPI.setClockDivider(21);  // On the Due, the system clock can be divided by values from 1 to 255.
+                              // The default value is 21, which sets the clock to 4 MHz like other Arduino boards.
 
     pinMode(_readyPin, INPUT);
     pinMode(_enablePin, OUTPUT);
